@@ -12,7 +12,7 @@ builder.Services.AddFastEndpoints()
                 .AddJWTBearerAuth(builder.Configuration["JWTSigningKey"] ?? "")
                 .AddAuthorization();
 
-builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DataContext")));
+builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
